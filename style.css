@@ -1,0 +1,156 @@
+body{
+    background-color:rgb(243, 199, 124);
+   
+    
+   
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    overflow-x: hidden;
+
+}
+.shutter{
+    position: absolute;
+    top:80px;
+    
+    height:400px;
+    width:400px;
+    background-image: url('Aesthetic-Artwork-PNG-Picture.png');
+    
+
+}
+img{
+    height: 400px;
+    width: 400px;
+    
+
+}
+.nav{
+    display: flex;
+    flex-direction:row;
+    
+    height:60px;
+    width:100%;
+    top:0px;
+    position: fixed;
+    z-index:300;
+    
+    
+    font-family: "Italiana", serif;
+    font-weight: 800;
+    font-style: normal;
+        
+    
+    font-style: normal;
+    color: rgb(243, 199, 124);
+    background-color:transparent;
+    
+    
+    backdrop-filter: blur(100px);
+    
+    padding-right:45px;
+    padding-left: 19px;
+    
+    
+    font-size:30px;
+
+
+    
+}
+
+.company{
+    
+    z-index:4000;
+    width:100%;
+    margin-top: 8px;
+    margin-left:25px;
+    font-size: 45px;
+    font-family: "Kirang Haerang", serif;
+    font-weight: 400;
+    font-style: normal;
+    
+
+
+
+}
+.home{
+    
+    z-index:4000;
+    width:160px;
+    margin-top: 12px;
+    margin-right:18px
+
+}
+.hello{
+
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    top:1000px;
+    width:100%;
+    height:2500px;
+    background-color: black;
+    margin:-10px;
+    
+    padding:20px;
+    
+    overflow-x: hidden;
+    
+    
+    font-family: "Gasoek One", serif;
+    font-weight: 200;
+    font-style: normal;
+        
+        
+    font-size:435px;
+    font-style: normal;
+    color: rgb(243, 199, 124);
+    
+        
+
+}
+.h{
+    display: inline-block;
+    margin:none;
+    margin-top: 5px;
+    
+    
+}
+.ji{
+   margin-top:600px;
+   display: flex;
+   justify-content: left; 
+   margin:-1px;
+   margin-left: 20px;
+}
+.title{
+    height:300px;
+    width:100%;
+    
+    color: bisque;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Italiana", serif;
+    font-weight: 800;
+    font-style: normal;
+    overflow-x: hidden;
+
+}
+.projects{
+    overflow-x: hidden;
+    
+    font-family: "Unbounded", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 200px;
+    color: rgb(54, 174, 198);
+        
+}

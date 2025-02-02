@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP Scroll Animation</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-x: hidden;
+            /* Hide horizontal overflow initially */
+        }
+
+        .section {
+            height: 100vh;
+            /* Full viewport height */
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .section:nth-child(1) {
+            background: #3498db;
+        }
+
+        .section:nth-child(2) {
+            background: #e74c3c;
+        }
+
+        .section:nth-child(3) {
+            background: #2ecc71;
+        }
+
+        .section:nth-child(4) {
+            background: #f39c12;
+        }
+
+        .horizontal-content {
+            display: flex;
+            width: max-content;
+        }
+
+        .content-item {
+            min-width: 100vw;
+            height: 100vh;
+            background-color: #f39c12;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="section">
+        <h1>Section 1: Vertical Scroll</h1>
+    </div>
+
+    <div class="section horizontal">
+        <div class="horizontal-content">
+            <div class="content-item">
+                <h1>Item 1</h1>
+            </div>
+            <div class="content-item">
+                <h1>Item 2</h1>
+            </div>
+            <div class="content-item">
+                <h1>Item 3</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h1>Section 3: Vertical Scroll Again</h1>
+    </div>
+
+    <div class="section horizontal">
+        <div class="horizontal-content">
+            <div class="content-item">
+                <h1>Item 4</h1>
+            </div>
+            <div class="content-item">
+                <h1>Item 5</h1>
+            </div>
+            <div class="content-item">
+                <h1>Item 6</h1>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Section 1 - Standard vertical scroll
+        gsap.from(".section:nth-child(1)", {
+            opacity: 0,
+            y: 100,
+            duration: 1.5,
+            ease: "power3.out",
+        });
+
+        // Section 2 - First Horizontal Scroll
+        gsap.to(".horizontal-content:nth-child(2) .horizontal-content", {
+            x: () => -(document.querySelector(".horizontal-content:nth-child(2)").scrollWidth - window.innerWidth),
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".section.horizontal:nth-child(2)",
+                start: "top top",
+                end: () => "+=" + (document.querySelector(".horizontal-content:nth-child(2)").scrollWidth - window.innerWidth),
+                scrub: 1,
+                pin: true,
+                anticipatePin: 1
+            }
+        });
+
+        // Section 3 - Standard vertical scroll again
+        gsap.from(".section:nth-child(3)", {
+            opacity: 0,
+            y: 100,
+            duration: 1.5,
+            ease: "power3.out",
+        });
+
+        // Section 4 - Second Horizontal Scroll
+        gsap.to(".horizontal-content:nth-child(4) .horizontal-content", {
+            x: () => -(document.querySelector(".horizontal-content:nth-child(4)").scrollWidth - window.innerWidth),
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".section.horizontal:nth-child(4)",
+                start: "top top",
+                end: () => "+=" + (document.querySelector(".horizontal-content:nth-child(4)").scrollWidth - window.innerWidth),
+                scrub: 1,
+                pin: true,
+                anticipatePin: 1
+            }
+        });
+    </script>
+</body>
+
+</html>
